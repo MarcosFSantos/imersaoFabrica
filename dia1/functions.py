@@ -1,6 +1,5 @@
 import math
 from typing import List
-import math
 
 #função para calcular os valores de x' e x" com a formula de bhaskara
 def bhaskara(a, b, c, delta):
