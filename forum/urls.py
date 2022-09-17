@@ -1,6 +1,7 @@
 from django.urls import path
 from forum.views import pagPrincipal, pagTopico, pagCriarTopico, pagAtualizarTopico, pagDeletarTopico, pagCriarComentario, pagAtualizarComentario, pagDeletarComentario
 
+# URLs do projeto.
 urlpatterns = [
     path('', pagPrincipal, name='principal'),
     path('topico/<int:pk>', pagTopico, name='topico'),

@@ -61,6 +61,7 @@ def pagCriarComentario(request):
     data['form'] = form
     return render(request, 'pagCriarComentario.html', data)
 
+# Função View da página de atualização dos comentários dos usuários, reponsável por construir a página de acordo com o banco de dados.
 def pagAtualizarComentario(request, pk):
     comentario = Comentario.objects.get(pk=pk)
     form = ComentarioForm(request.POST or None, instance=comentario)
@@ -71,6 +72,8 @@ def pagAtualizarComentario(request, pk):
     data['comentario'] = comentario
     data['form'] = form
     return render(request, 'pagAtualizarComentario.html', data)
+
+# Função View da exclusão dos comentários dos usuários.
 
 def pagDeletarComentario(request, pk):
     comentario = Comentario.objects.get(pk=pk)
