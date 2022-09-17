@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from forum.models import Topico
+from forum.models import Topico, Comentario
 from forum.forms import TopicoForm
 
 # Função view da página principal, responsável por contruir a página de acordo com o banco de dados. 
