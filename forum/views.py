@@ -51,6 +51,7 @@ def pagDeletarTopico(request, pk):
     topico.delete()
     return redirect('principal')
 
+# Função View da página de criação dos comentários dos usuários, reponsável por construir a página de acordo com o banco de dados.
 def pagCriarComentario(request):
     form = ComentarioForm(request.POST or None)
     if form.is_valid():
@@ -59,3 +60,14 @@ def pagCriarComentario(request):
     data = {}
     data['form'] = form
     return render(request, 'pagCriarComentario.html', data)
+
+def pagAtualizarComentario(request, pk):
+    comentario = Comentario.objects.get(pk=pk)
+    form = ComentarioForm(request.POST or None, instance=comentario)
+    if form.is_valid():
+        form.save()
+        return redirect('principal')
+    data = {}
+    data['comentario'] = comentario
+    data['form'] = form
+    return render(request, 'pagAtualizarComentario.html', data)

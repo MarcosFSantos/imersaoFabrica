@@ -12,8 +12,9 @@
         <p>{{topico.autor}} - {{topico.horaPostagem}}</p><hr>
         <p>{{topico.conteudo}}</p><hr>
     
+    <br>
     <div align="left">
-        <a href="{% url 'principal' %}"><button>Voltar</button></a> <a href="{% url 'criarComentario' %}"><button>Criar comentário</button></a>
+        <a href="{% url 'principal' %}"><button><h3>Voltar</h3></button></a> <a href="{% url 'criarComentario' %}"><button><h3>Criar comentário</h3></button></a>
     </div>
     
     </div>
@@ -24,6 +25,7 @@
             <br>
             <h4>{{comentario.autor}} - {{comentario.horaPostagem}}</h4>
             <p>{{comentario.conteudo}}</p>
+            <a href="{% url 'atualizarComentario' comentario.pk %}"><button>Atualizar</button></a>
         {% endfor %}
 
     </div>
