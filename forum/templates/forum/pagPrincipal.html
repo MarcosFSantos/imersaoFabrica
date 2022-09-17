@@ -11,13 +11,16 @@
 
     <hr>
     <h2>Tópicos de discursões:</h2>
+    <div align="right">
+        <h3><a href="{% url 'criarTopico' %}">Criar Tópico</a></h3>
+    </div>
 
     <ul>
     {% for topico in topicos %}
         <br>
         <li>
             <a href="{% url 'topico' topico.pk %}"><h3>{{topico.titulo}}</h3></a>
-            <h5>Postado por {{topico.autor}}</h5>
+            <h5>Postado por {{topico.autor}} - {{topico.horaPostagem}}</h5>
         </li>
     {% endfor %}
     </ul>

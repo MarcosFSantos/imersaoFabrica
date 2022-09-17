@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{topico.titulo}}</title>
+    <title>Criar tópico</title>
 </head>
 <body>
     <div align="center">
-        <h1>{{topico.titulo}}</h1><hr>
-        <p>{{topico.autor}} - {{topico.horaPostagem}}</p><hr>
-        <p>{{topico.conteudo}}</p><hr>
+        <h1>Criar Tópico</h1><hr>
     </div>
-    <h2>Comentários:</h2>
-    <div align="left">
 
-    </div>
+    <form method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">Salvar</button>
+    </form>
+
 </body>
 </html>
