@@ -1,4 +1,4 @@
-from datetime import date, datetime
+from datetime import datetime
 from django.db import models
 
 # Classe que representa os tópicos onde os usuários vão debater assuntos diversos no Forum de conversas.
