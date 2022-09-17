@@ -25,7 +25,7 @@
             <br>
             <h4>{{comentario.autor}} - {{comentario.horaPostagem}}</h4>
             <p>{{comentario.conteudo}}</p>
-            <a href="{% url 'atualizarComentario' comentario.pk %}"><button>Atualizar</button></a>
+            <a href="{% url 'atualizarComentario' comentario.pk %}"><button>Atualizar</button></a> <a href="{% url 'deletarComentario' comentario.pk %}"><button>Deletar</button></a>
         {% endfor %}
 
     </div>

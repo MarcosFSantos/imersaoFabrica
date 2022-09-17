@@ -71,3 +71,8 @@ def pagAtualizarComentario(request, pk):
     data['comentario'] = comentario
     data['form'] = form
     return render(request, 'pagAtualizarComentario.html', data)
+
+def pagDeletarComentario(request, pk):
+    comentario = Comentario.objects.get(pk=pk)
+    comentario.delete()
+    return redirect('principal')
