@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from forum.models import Topico, Comentario
-from forum.forms import TopicoForm
+from forum.forms import TopicoForm, ComentarioForm
 
 # Função view da página principal, responsável por contruir a página de acordo com o banco de dados. 
 def pagPrincipal(request):
@@ -50,3 +50,12 @@ def pagDeletarTopico(request, pk):
     topico = Topico.objects.get(pk=pk)
     topico.delete()
     return redirect('principal')
+
+def pagCriarComentario(request):
+    form = ComentarioForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('principal')
+    data = {}
+    data['form'] = form
+    return render(request, 'pagCriarComentario.html', data)

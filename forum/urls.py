@@ -1,5 +1,5 @@
 from django.urls import path
-from forum.views import pagPrincipal, pagTopico, pagCriarTopico, pagAtualizarTopico, pagDeletarTopico
+from forum.views import pagPrincipal, pagTopico, pagCriarTopico, pagAtualizarTopico, pagDeletarTopico, pagCriarComentario
 
 urlpatterns = [
     path('', pagPrincipal, name='principal'),
@@ -7,4 +7,5 @@ urlpatterns = [
     path('criarTopico/', pagCriarTopico, name='criarTopico'),
     path('atualizarTopico/<int:pk>/', pagAtualizarTopico, name='atualizarTopico'),
     path('deletarTopico/<int:pk>/', pagDeletarTopico, name='deletarTopico'),
+    path('criarComentario/', pagCriarComentario, name='criarComentario'),
 ]
