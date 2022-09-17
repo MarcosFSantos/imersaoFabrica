@@ -8,5 +8,19 @@
 </head>
 <body>
     <h1>Página principal</h1>
+
+    <hr>
+    <h2>Tópicos de discursões:</h2>
+
+    <ul>
+    {% for topico in topicos %}
+        <br>
+        <li>
+            <h3>{{topico.titulo}}</h3>
+            <h5>Postado por {{topico.autor}}</h5>
+        </li>
+    {% endfor %}
+    </ul>
+
 </body>
 </html>
