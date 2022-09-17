@@ -41,3 +41,9 @@ def pagAtualizarTopico(request, pk):
     data['topico'] = topico
     data['form'] = form
     return render(request, 'pagAtualizarTopico.html', data)
+
+# Função view responsável pela exclusão de um tópico.
+def pagDeletarTopico(request, pk):
+    topico = Topico.objects.get(pk=pk)
+    topico.delete()
+    return redirect('principal')

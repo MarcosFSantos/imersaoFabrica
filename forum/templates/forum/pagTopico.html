@@ -11,6 +11,11 @@
         <h1>{{topico.titulo}}</h1><hr>
         <p>{{topico.autor}} - {{topico.horaPostagem}}</p><hr>
         <p>{{topico.conteudo}}</p><hr>
+    
+    <div align="left">
+        <a href="{% url 'principal' %}"><button>Voltar</button></a>
+    </div>
+    
     </div>
     <h2>Comentários:</h2>
     <div align="left">
