@@ -16,7 +16,7 @@
     {% for topico in topicos %}
         <br>
         <li>
-            <h3>{{topico.titulo}}</h3>
+            <a href="{% url 'topico' topico.pk %}"><h3>{{topico.titulo}}</h3></a>
             <h5>Postado por {{topico.autor}}</h5>
         </li>
     {% endfor %}

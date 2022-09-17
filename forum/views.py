@@ -7,3 +7,9 @@ def pagPrincipal(request):
     data = {}
     data['topicos'] = topicos
     return render(request, 'pagPrincipal.html', data)
+
+def pagTopico(request, pk):
+    topico = Topico.objects.get(pk=pk)
+    data = {}
+    data['topico'] = topico
+    return render(request, 'pagTopico.html', data)
