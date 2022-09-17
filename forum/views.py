@@ -12,8 +12,11 @@ def pagPrincipal(request):
 # Função view da página de detalhe de um tópico, específico responsável por construir a página de acordo com o banco de dados.
 def pagTopico(request, pk):
     topico = Topico.objects.get(pk=pk) # Cria uma instancia do tópico presente no banco de dados que tem a chave primária(id) especificada na url.
+    comentarios = Comentario.objects.filter(topico_id=pk)
+
     data = {}
     data['topico'] = topico
+    data['comentarios'] = comentarios
     return render(request, 'pagTopico.html', data)
 
 # Função view da página de criação de tópico, responsável por construir a página de acordo com o banco de dados.

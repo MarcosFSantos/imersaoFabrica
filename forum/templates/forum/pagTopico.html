@@ -19,6 +19,12 @@
     </div>
     <h2>Comentários:</h2>
     <div align="left">
+        
+        {% for comentario in comentarios %}
+            <br>
+            <h4>{{comentario.autor}} - {{comentario.horaPostagem}}</h4>
+            <p>{{comentario.conteudo}}</p>
+        {% endfor %}
 
     </div>
 </body>
