@@ -9,17 +9,19 @@
 <body>
 
     <!-- Elemento <header> da página, a parte introdutória da página podendo conter o título ou a logo. -->
-    <header align="center">
+    <header align="center" class="main-header">
         <h1>Página principal</h1>
         <hr>
     </header>
 
-    <h2>Tópicos de discursões:</h2>
-    <div align="right">
+    <!-- Elemento <nav> da página, normalmente uma área abaixo do <header> com um conjunto de links. -->
+    <nav align="right" class="main-nav">
         <a href="{% url 'criarTopico' %}">
             <button><h3>Criar Tópico</h3></button>
         </a>
-    </div>
+    </nav>
+
+    <h2>Tópicos de discursões:</h2>
 
     <ul>
     {% for topico in topicos %}
