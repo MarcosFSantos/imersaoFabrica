@@ -43,18 +43,32 @@
 
     <!-- Um elemento <section> da página representando a seção de comentários. -->
     <section class="main-coment-section">
-
         <h2>Comentários:</h2>
-        <div align="left">
             
-            {% for comentario in comentarios %}
+        {% for comentario in comentarios %}
+            <!-- Elemento <article> que representa um comentário. -->
+            <article class="main-coments-article">
                 <br>
+
+                <!-- 
+                Corpo principal do comentário apresentando nome do autor, 
+                data e hora da postagem, e conteúdo do comentário. 
+                -->
                 <h4>{{comentario.autor}} - {{comentario.horaPostagem}}</h4>
                 <p>{{comentario.conteudo}}</p>
-                <a href="{% url 'atualizarComentario' comentario.pk %}"><button>Atualizar</button></a> <a href="{% url 'deletarComentario' comentario.pk %}"><button>Deletar</button></a>
-            {% endfor %}
 
-        </div>
+                <!-- Botão de atualizar o comentário -->
+                <a href="{% url 'atualizarComentario' comentario.pk %}">
+                    <button>Atualizar</button>
+                </a> 
+
+                <!-- Botão de deletar o comentário. -->
+                <a href="{% url 'deletarComentario' comentario.pk %}">
+                    <button>Deletar</button>
+                </a>
+
+            </article>
+        {% endfor %}
 
     </section>
 
