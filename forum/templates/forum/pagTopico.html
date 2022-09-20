@@ -12,7 +12,7 @@
 <body>
 
     <!-- Elemento <header> da página, a parte introdutória da página podendo conter o título ou a logo. -->
-    <header align="center" class="main-header">
+    <header class="main-header">
         <h1>{{topico.titulo}}</h1>
         <hr>
     </header>
@@ -30,7 +30,7 @@
     </section>
 
     <!-- Elemento <nav> da página, área abaixo do <header> com um conjunto de links. -->
-    <nav>
+    <nav class="main-nav">
 
         <!-- Botão de voltar -->
         <a href="{% url 'principal' %}">
