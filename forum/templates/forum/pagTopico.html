@@ -20,15 +20,26 @@
         <hr>
     </section>
 
-    <div align="center">
-        <p>{{topico.conteudo}}</p><hr>
+    <!-- Um elemento <section> da página representando o conteúdo do tópico. -->
+    <section align="center" class="main-content-section">
+        <p>{{topico.conteudo}}</p>
+        <hr>
+    </section>
+
+    <!-- Elemento <nav> da página, área abaixo do <header> com um conjunto de links. -->
+    <nav>
+
+        <!-- Botão de voltar -->
+        <a href="{% url 'principal' %}">
+            <button><h3>Voltar</h3></button>
+        </a>
+
+        <!-- Botão de criar comentário -->
+        <a href="{% url 'criarComentario' %}">
+            <button><h3>Criar comentário</h3></button>
+        </a>
+    </nav>
     
-    <br>
-    <div align="left">
-        <a href="{% url 'principal' %}"><button><h3>Voltar</h3></button></a> <a href="{% url 'criarComentario' %}"><button><h3>Criar comentário</h3></button></a>
-    </div>
-    
-    </div>
     <h2>Comentários:</h2>
     <div align="left">
         
