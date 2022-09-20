@@ -38,18 +38,25 @@
         <a href="{% url 'criarComentario' %}">
             <button><h3>Criar comentário</h3></button>
         </a>
-    </nav>
-    
-    <h2>Comentários:</h2>
-    <div align="left">
-        
-        {% for comentario in comentarios %}
-            <br>
-            <h4>{{comentario.autor}} - {{comentario.horaPostagem}}</h4>
-            <p>{{comentario.conteudo}}</p>
-            <a href="{% url 'atualizarComentario' comentario.pk %}"><button>Atualizar</button></a> <a href="{% url 'deletarComentario' comentario.pk %}"><button>Deletar</button></a>
-        {% endfor %}
 
-    </div>
+    </nav>
+
+    <!-- Um elemento <section> da página representando a seção de comentários. -->
+    <section class="main-coment-section">
+
+        <h2>Comentários:</h2>
+        <div align="left">
+            
+            {% for comentario in comentarios %}
+                <br>
+                <h4>{{comentario.autor}} - {{comentario.horaPostagem}}</h4>
+                <p>{{comentario.conteudo}}</p>
+                <a href="{% url 'atualizarComentario' comentario.pk %}"><button>Atualizar</button></a> <a href="{% url 'deletarComentario' comentario.pk %}"><button>Deletar</button></a>
+            {% endfor %}
+
+        </div>
+
+    </section>
+
 </body>
 </html>
