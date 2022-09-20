@@ -14,7 +14,7 @@
         <hr>
     </header>
 
-    <!-- Elemento <nav> da página, normalmente uma área abaixo do <header> com um conjunto de links. -->
+    <!-- Elemento <nav> da página, área abaixo do <header> com um conjunto de links. -->
     <nav align="right" class="main-nav">
         <a href="{% url 'criarTopico' %}">
             <button><h3>Criar Tópico</h3></button>
@@ -22,24 +22,40 @@
     </nav>
 
     <!-- 
-    Elemento <section> da página, representa um grupo genérico de elementos 
-    e pode ser identificado através de um elemento heading(no caso o h2). 
+    Um elemento <section> da página representando o grupo de tópicos da página, 
+    pode ser identificado através do elemento heading ( <h2>Tópicos de discursões:<h2> ). 
     -->
     <section class="main-content-section">
-    <h2>Tópicos de discursões:</h2>
+        <h2>Tópicos de discursões:</h2>
 
-    <ul>
-    {% for topico in topicos %}
-        <br>
-        <li>
-            <a href="{% url 'topico' topico.pk %}"><h3>{{topico.titulo}}</h3></a>
-            <h5>Postado por {{topico.autor}} - {{topico.horaPostagem}}</h5>
-            <a href="{% url 'atualizarTopico' topico.pk %}"><button>Atualizar</button></a> <a href="{% url 'deletarTopico' topico.pk %}"><button>Deletar</button></a>
-        </li>
-    {% endfor %}
-    </ul>
+        {% for topico in topicos %}
+            <!-- Um elemento <article> da página, representando um tópico do forum. -->
+            <article class="main-topics">
+                <br>
+
+                <!-- 
+                Corpo principal do tópico, apresentando título, 
+                nome do autor e data e hora da postagem 
+                -->
+                <a href="{% url 'topico' topico.pk %}">
+                    <h3>{{topico.titulo}}</h3>
+                </a>
+                <h5>Postado por {{topico.autor}} - {{topico.horaPostagem}}</h5>
+
+                <!-- Botão de atualizar o tópico. -->
+                <a href="{% url 'atualizarTopico' topico.pk %}">
+                    <button>Atualizar</button>
+                </a> 
+
+                <!-- Botão de deltear o tópico -->
+                <a href="{% url 'deletarTopico' topico.pk %}">
+                    <button>Deletar</button>
+                </a>
+
+            </article>
+        {% endfor %}
 
     </section>
-    
+
 </body>
 </html>
