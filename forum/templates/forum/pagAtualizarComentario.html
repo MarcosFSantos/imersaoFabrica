@@ -7,9 +7,12 @@
     <title>Atualizar comentario de {{comentario.autor}}</title>
 </head>
 <body>
-    <div align="center">
-        <h1>Atualizar Comentário de {{comentario.autor}}</h1><hr>
-    </div>
+
+    <!-- Elemento <header> da página, a parte introdutória da página podendo conter o título ou a logo. -->
+    <header>
+        <h1>Atualizar Comentário de {{comentario.autor}}</h1>
+        <hr>
+    </header>
 
     <form method="POST">
         {% csrf_token %}
