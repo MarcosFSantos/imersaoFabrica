@@ -14,13 +14,16 @@
         <hr>
     </header>
 
-    <form method="POST">
-        
-        {% csrf_token %}
-        {{ form.as_p }}
+    <!-- Elemento <section> representando a seção de formulário -->
+    <section class="main-form-section">
+        <form method="POST">
+            
+            {% csrf_token %}
+            {{ form.as_p }}
 
-        <button type="submit">Salvar</button>
-    </form>
+            <button type="submit">Salvar</button>
+        </form>
+    </section>
 
 </body>
 </html>
